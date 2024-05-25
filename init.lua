@@ -28,6 +28,8 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+require'lspconfig'.jedi_language_server.setup{}
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
