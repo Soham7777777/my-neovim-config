@@ -30,6 +30,16 @@ require("lazy").setup({
 
 require'lspconfig'.jedi_language_server.setup{}
 
+require("auto-save").setup({
+    {
+        "pocco81/auto-save.nvim",
+        lazy = false
+    },
+
+    {import = 'plugins'},
+
+}, lazy_config)
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
