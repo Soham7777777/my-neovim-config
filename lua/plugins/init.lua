@@ -21,8 +21,7 @@ return {
   	opts = {
   		ensure_installed = {
   			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier", "jedi-language-server",
-            "black", "debugpy", "flake8", "isort", "mypy", "pylint"
+  			"html-lsp", "css-lsp" , "prettier", "jedi-language-server", "mypy"
   		},
   	},
   },
@@ -32,7 +31,7 @@ return {
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
-       "html", "css"
+       "html", "css", "python"
   		},
   	},
   },
@@ -44,16 +43,12 @@ return {
 
             require('lint').linters_by_ft = {
                 python = {
-                    'flake8',
-                    'mypy',
-                    'pylint',
+                    'mypy'
                 }
             }
-
             vim.api.nvim_create_autocmd({"BufWritePost"}, {
                 pattern = {"*.py",},
-                callback = function ()
-                    require('lint').try_lint()
+                callback = function () require('lint').try_lint()
                 end,
             })
 
